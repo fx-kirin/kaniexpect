@@ -1,0 +1,15 @@
+[package]
+name = "kaniexpect"
+version = "0.1.0"
+authors = ["fx_kirin <fx.kirin@gmail.com>"]
+edition = "2018"
+repository = "https://github.com/fx-kirin/kaniexpect"
+homepage = "https://github.com/fx-kirin/kaniexpect"
+description = "expect with line numbers"
+license = "MIT"
+
+[lib]
+name = "kaniexpect"
+crate-type = ["lib"]
+
+[dependencies]
