@@ -9,11 +9,24 @@ macro_rules! expect {
 }
 
 #[macro_export]
-macro_rules! kaniformat {
-    ($option:expr) => {{
+macro_rules! kformat {
+    () => {{
         format!(concat!(file!(), ":", line!()))
     }};
-    ($option:expr, $literal:expr) => {{
+    ($literal:expr) => {{
         format!(concat!(file!(), ":", line!(), "|", $literal))
     }};
+    ($literal:expr, $($arg:tt)*) => {{
+        format!(concat!(file!(), ":", line!(), "|", $literal), $($arg)*)
+    }};
+}
+
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_format() {
+        println!("{}", kformat!("test"));
+        println!("{}", kformat!("test {}", "argtest"));
+    }
 }

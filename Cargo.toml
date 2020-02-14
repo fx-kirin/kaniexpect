@@ -1,6 +1,6 @@
 [package]
 name = "kaniexpect"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["fx_kirin <fx.kirin@gmail.com>"]
 edition = "2018"
 repository = "https://github.com/fx-kirin/kaniexpect"
