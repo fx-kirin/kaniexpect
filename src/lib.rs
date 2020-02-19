@@ -21,6 +21,19 @@ macro_rules! kformat {
     }};
 }
 
+#[macro_export]
+macro_rules! kpanic {
+    () => {{
+        panic!(concat!(file!(), ":", line!()))
+    }};
+    ($literal:expr) => {{
+        panic!(concat!(file!(), ":", line!(), "|", $literal))
+    }};
+    ($literal:expr, $($arg:tt)*) => {{
+        panic!(concat!(file!(), ":", line!(), "|", $literal), $($arg)*)
+    }};
+}
+
 
 #[cfg(test)]
 mod tests {
